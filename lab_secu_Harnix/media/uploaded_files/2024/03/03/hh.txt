@@ -1,0 +1,22 @@
+Vérifier si SSH est déjà installé : sudo apt install openssh-server
+
+Activer le service SSH : sudo service ssh start
+
+Tester la connexion sur une autre machine: ssh [utilisateur]@[adresse IP ou nom d'hôte]
+
+Pour empêcher la machine 1 de se connecter par SSH à la machine 2, vous pouvez prendre plusieurs mesures. Voici quelques suggestions :
+
+Modification des règles du pare-feu sur la machine 2 :
+Sur la machine 2, Nous pouvez ajuster les règles du pare-feu pour bloquer les connexions SSH en provenance de la machine 1. Cela peut être fait en utilisant des outils tels que iptables sur Linux. Par exemple :
+bass : sudo iptables -A INPUT -s [adresse IP de la machine 1] -p tcp --dport 22 -j DROP
+
+
+
+Installation d'Apache2
+sudo apt update
+sudo apt install apache2
+
+Démarrage et Activation du Service Apache :sudo systemctl start apache2 
+
+Test de connexion: curl http://[address de ma machine 2]
+
